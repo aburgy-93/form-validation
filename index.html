@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Home Health Form Validation |</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="form_container">
+        <div class="heading_container">
+          <h2 class="form_logo">Home Health</h2>
+          <h2 class="registration-form">Registration Form</h2>
+        </div>
+        <form action="" class="form-reg">
+          <div class="name">
+            <div class="form_input first_name">
+              <label for="first_name">First Name:</label>
+              <input class="reg-input" type="text" name="first_name" required />
+            </div>
+            <div class="form_input">
+              <label for="first_last">Last Name:</label>
+              <input class="reg-input" type="text" name="last_name" required />
+            </div>
+          </div>
+          <div class="personal-info">
+            <div class="form_input email">
+              <label for="email">Email:</label>
+              <input
+                class="reg-input email-cont"
+                type="email"
+                name="email"
+                id="user_email"
+                required
+              />
+            </div>
+            <div class="DOB">
+              <label for="DOB">Date of Birth:</label>
+              <input
+                class="reg-input"
+                type="date"
+                id="birthday"
+                name="birthday"
+              />
+            </div>
+          </div>
+
+          <div class="location-info">
+            <div class="country">
+              <label for="country">Country</label>
+              <input class="reg-input" type="text" />
+            </div>
+            <div class="zip">
+              <label for="country">Zip Code</label>
+              <input class="reg-input" type="text" />
+            </div>
+          </div>
+
+          <div class="password-info">
+            <div class="password">
+              <label for="password">Password</label>
+              <input class="reg-input" type="text" />
+            </div>
+            <div class="confirm-password">
+              <label for="password">Confirm password</label>
+              <input class="reg-input" type="text" />
+            </div>
+          </div>
+        </form>
+
+        <div class="heading_container">
+          <h2 class="medical-history">Medical History</h2>
+        </div>
+
+        <form action="" class="form-med-hist">
+          <div class="medhist-question">
+            <p class="medhist-prompt">Have you been diagnosed with ... ?</p>
+
+            <div class="question1">
+              <input type="radio" id="html" name="fav_language" value="HTML" />
+              <label for="html">Yes</label>
+
+              <input type="radio" id="html" name="fav_language" value="HTML" />
+              <label for="html">No</label>
+            </div>
+          </div>
+
+          <div class="medhist-question">
+            <p class="medhist-prompt">Please check all symptoms that apply.</p>
+
+            <form class="medhist_input">
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox1"
+                  name="checkbox1"
+                  value="Loss of taste/smell"
+                />
+                <label for="checkbox1">Loss of taste/smell</label><br />
+              </div>
+
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox2"
+                  name="checkbox2"
+                  value="Diffuculty breathing"
+                />
+                <label for="checkbox2">Diffuculty breathing</label><br />
+              </div>
+
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox3"
+                  name="checkbox3"
+                  value="Cough"
+                />
+                <label for="checkbox3">Cough</label><br />
+              </div>
+
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox3"
+                  name="checkbox3"
+                  value="Runny nose"
+                />
+                <label for="checkbox3">Runny nose</label><br />
+              </div>
+
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox3"
+                  name="checkbox3"
+                  value="Body aches"
+                />
+                <label for="checkbox3">Body aches</label><br />
+              </div>
+
+              <div class="medhist_questions">
+                <input
+                  type="checkbox"
+                  id="checkbox3"
+                  name="checkbox3"
+                  value="Cough"
+                />
+                <label for="checkbox3">Cough</label>
+              </div>
+            </form>
+          </div>
+        </form>
+        <button class="submit">Submit</button>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- https://assets-global.website-files.com/5ebb0930dd82631397ddca92/5f4fa16f5fccdee5a80412a3_Templates_Main.svg -->
