@@ -25,6 +25,24 @@ btn.addEventListener("click", function (e) {
 });
 
 const isRequired = (value) => (value === "" ? false : true);
+
+const isBetween = (length, min, max) =>
+  length < min || length > max ? false : true;
+
+const isEmailValid = (email) => {
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  return re.test(email);
+};
+
+const isPasswordSecure = (password) => {
+  const re = new RegExp(
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
+  );
+  return re.test(password);
+};
+
 const validation = function (variable, element, message) {
   if (!isRequired(variable)) {
     showError(element, message);
@@ -36,13 +54,19 @@ const validation = function (variable, element, message) {
 const showError = function (input, message) {
   // gets the form-field element
   const formField = input.parentElement;
-
   // add the error class
-
   formField.classList.add("error");
-
   const error = formField.querySelector("small");
   error.textContent = message;
+};
+
+const showSuccess = function (input, message) {
+  // gets the form-field element
+  const formField = input.parentElement;
+  // add the error class
+  formField.classList.add("success");
+  const success = formField.querySelector("small");
+  success.textContent = message;
 };
 
 const checkFirstName = function () {
@@ -61,9 +85,16 @@ const checkLastName = function () {
 
 const checkEmail = function () {
   let valid = false;
-  const message = "Email cannot be blank.";
+  const message = "Email is not valid.";
   const email = userEmailEl.value.trim();
-  validation(email, userEmailEl, message);
+
+  if (!isRequired(email)) {
+    showError(userEmailEl, "Email cannot be blank.");
+  } else if (!isEmailValid(email)) {
+    showError(userEmailEl, message);
+  } else {
+    valid = true;
+  }
 };
 
 const checkDOB = function () {
@@ -89,17 +120,28 @@ const checkZip = function () {
 
 const checkPassword = function () {
   let valid = false;
-  const message = "Password cannot be blank.";
+  const message =
+    "Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*).";
   const password = passwordEl.value.trim();
-  validation(password, passwordEl, message);
+  // validation(password, passwordEl, message);
+
+  if (!isRequired(password)) {
+    showError(passwordEl, "Password cannot be blank.");
+  } else if (!isPasswordSecure(password)) {
+    showError(passwordEl, message);
+  } else {
+    valid = true;
+  }
 };
 
 const confirmPassword = function () {
+  const successMessage = "Logged in!";
+  const failureMessage = "Passwords do not match. Try again!";
   const password = passwordEl.value.trim();
   const confirmPassword = confirmPasswordEl.value.trim();
-  if (password === confirmPassword) {
-    console.log(`YOU'RE IN`);
+  if (password === confirmPassword && password != "") {
+    showSuccess(confirmPasswordEl, successMessage);
   } else {
-    console.log("PASSWORDS DO NOT MATCH");
+    showError(confirmPasswordEl, failureMessage);
   }
 };
