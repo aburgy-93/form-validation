@@ -15,19 +15,33 @@
           <h2 class="form_logo">Home Health</h2>
           <h2 class="registration-form">Registration Form</h2>
         </div>
-        <form action="" class="form-reg">
+        <form action="submit" class="form-reg form">
           <div class="name">
-            <div class="form_input first_name">
+            <div class="form_input first_name form-field">
               <label for="first_name">First Name:</label>
-              <input class="reg-input" type="text" name="first_name" required />
+              <input
+                class="reg-input"
+                type="text"
+                name="first_name"
+                id="first_name"
+                required
+              />
+              <small></small>
             </div>
-            <div class="form_input">
+            <div class="form_input form-field">
               <label for="first_last">Last Name:</label>
-              <input class="reg-input" type="text" name="last_name" required />
+              <input
+                class="reg-input"
+                type="text"
+                name="last_name"
+                id="last_name"
+                required
+              />
+              <small></small>
             </div>
           </div>
           <div class="personal-info">
-            <div class="form_input email">
+            <div class="form_input email form-field">
               <label for="email">Email:</label>
               <input
                 class="reg-input email-cont"
@@ -36,37 +50,68 @@
                 id="user_email"
                 required
               />
+              <small></small>
             </div>
-            <div class="DOB">
+            <div class="DOB form-field">
               <label for="DOB">Date of Birth:</label>
               <input
                 class="reg-input"
                 type="date"
-                id="birthday"
                 name="birthday"
+                id="birthday"
+                required
               />
+              <small></small>
             </div>
           </div>
 
           <div class="location-info">
-            <div class="country">
+            <div class="country form-field">
               <label for="country">Country</label>
-              <input class="reg-input" type="text" />
+              <input
+                class="reg-input"
+                type="text"
+                name="country"
+                id="country"
+                required
+              />
+              <small></small>
             </div>
-            <div class="zip">
-              <label for="country">Zip Code</label>
-              <input class="reg-input" type="text" />
+            <div class="zip form-field">
+              <label for="zip">Zip Code</label>
+              <input
+                class="reg-input"
+                type="text"
+                name="zip"
+                id="zip"
+                required
+              />
+              <small></small>
             </div>
           </div>
 
-          <div class="password-info">
+          <div class="password-info form-field">
             <div class="password">
               <label for="password">Password</label>
-              <input class="reg-input" type="text" />
+              <input
+                class="reg-input"
+                type="text"
+                name="password"
+                id="password"
+                required
+              />
+              <small></small>
             </div>
-            <div class="confirm-password">
+            <div class="confirm-password form-field">
               <label for="password">Confirm password</label>
-              <input class="reg-input" type="text" />
+              <input
+                class="reg-input"
+                type="text"
+                name="confirm-password"
+                id="confirm-password"
+                required
+              />
+              <small></small>
             </div>
           </div>
         </form>
@@ -75,23 +120,25 @@
           <h2 class="medical-history">Medical History</h2>
         </div>
 
-        <form action="" class="form-med-hist">
+        <form action="" class="form-med-hist form">
           <div class="medhist-question">
             <p class="medhist-prompt">Have you been diagnosed with ... ?</p>
 
-            <div class="question1">
+            <div class="question1 form-field">
               <input type="radio" id="html" name="fav_language" value="HTML" />
               <label for="html">Yes</label>
 
               <input type="radio" id="html" name="fav_language" value="HTML" />
               <label for="html">No</label>
             </div>
+
+            <small></small>
           </div>
 
           <div class="medhist-question">
             <p class="medhist-prompt">Please check all symptoms that apply.</p>
 
-            <form class="medhist_input">
+            <form class="medhist_input form-field">
               <div class="medhist_questions">
                 <input
                   type="checkbox"
@@ -102,7 +149,7 @@
                 <label for="checkbox1">Loss of taste/smell</label><br />
               </div>
 
-              <div class="medhist_questions">
+              <div class="medhist_questions form-field">
                 <input
                   type="checkbox"
                   id="checkbox2"
@@ -112,7 +159,7 @@
                 <label for="checkbox2">Diffuculty breathing</label><br />
               </div>
 
-              <div class="medhist_questions">
+              <div class="medhist_questions form-field">
                 <input
                   type="checkbox"
                   id="checkbox3"
@@ -122,7 +169,7 @@
                 <label for="checkbox3">Cough</label><br />
               </div>
 
-              <div class="medhist_questions">
+              <div class="medhist_questions form-field">
                 <input
                   type="checkbox"
                   id="checkbox3"
@@ -132,7 +179,7 @@
                 <label for="checkbox3">Runny nose</label><br />
               </div>
 
-              <div class="medhist_questions">
+              <div class="medhist_questions form-field">
                 <input
                   type="checkbox"
                   id="checkbox3"
@@ -142,7 +189,7 @@
                 <label for="checkbox3">Body aches</label><br />
               </div>
 
-              <div class="medhist_questions">
+              <div class="medhist_questions form-field">
                 <input
                   type="checkbox"
                   id="checkbox3"
@@ -152,6 +199,7 @@
                 <label for="checkbox3">Cough</label>
               </div>
             </form>
+            <small></small>
           </div>
         </form>
         <button class="submit">Submit</button>

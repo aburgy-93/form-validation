@@ -48,6 +48,11 @@ Default: 9px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 /*//////////////////////////////////////////////////////////////////////////////*/
+:root {
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+}
 
 * {
   padding: 0;
@@ -74,6 +79,14 @@ body {
 
 h2 {
   margin-bottom: 1.6rem;
+}
+
+.form-field.error input {
+  border: 1px solid var(--error-color);
+}
+
+.form-field.success input {
+  border: 1px solid var(--success-color);
 }
 
 .main {
@@ -128,7 +141,9 @@ h2 {
 }
 
 .first_name,
-.email {
+.email,
+.country,
+.password {
   margin-right: 1.2rem;
 }
 
@@ -137,9 +152,19 @@ h2 {
 
 .name,
 .email,
-.DOB {
+.DOB,
+.location-info,
+.password-info {
   display: flex;
   margin-bottom: 1.2rem;
+}
+
+.country,
+.zip,
+.password,
+.confirm-password {
+  display: flex;
+  flex-direction: column;
 }
 
 .DOB {
@@ -149,6 +174,9 @@ h2 {
 
 .DOB > label {
   margin-right: 1.2rem;
+}
+
+.location-info {
 }
 
 .form-med-hist {
