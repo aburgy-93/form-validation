@@ -25,6 +25,13 @@ btn.addEventListener("click", function (e) {
 });
 
 const isRequired = (value) => (value === "" ? false : true);
+const validation = function (variable, element, message) {
+  if (!isRequired(variable)) {
+    showError(element, message);
+  } else {
+    valid = true;
+  }
+};
 
 const showError = function (input, message) {
   // gets the form-field element
@@ -40,86 +47,51 @@ const showError = function (input, message) {
 
 const checkFirstName = function () {
   let valid = false;
-
+  const message = "First name cannot be blank.";
   const firstName = firstNameEl.value.trim();
-
-  if (!isRequired(firstName)) {
-    showError(firstNameEl, "First name cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(firstName, firstNameEl, message);
 };
 
 const checkLastName = function () {
   let valid = false;
-
-  const firstName = lastNameEl.value.trim();
-
-  if (!isRequired(firstName)) {
-    showError(lastNameEl, "First name cannot be blank.");
-  } else {
-    valid = true;
-  }
+  const message = "Last name cannot be blank.";
+  const lastName = lastNameEl.value.trim();
+  validation(lastName, lastNameEl, message);
 };
 
 const checkEmail = function () {
   let valid = false;
-
+  const message = "Email cannot be blank.";
   const email = userEmailEl.value.trim();
-
-  if (!isRequired(email)) {
-    showError(userEmailEl, "Email cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(email, userEmailEl, message);
 };
 
 const checkDOB = function () {
   let valid = false;
-
+  const message = "Date of birth cannot be blank.";
   const dob = birthdayEl.value.trim();
-
-  if (!isRequired(dob)) {
-    showError(birthdayEl, "First name cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(dob, birthdayEl, message);
 };
 
 const checkCountry = function () {
   let valid = false;
-
+  const message = "Country cannot be blank.";
   const country = userCountryEl.value.trim();
-
-  if (!isRequired(country)) {
-    showError(userCountryEl, "First name cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(country, userCountryEl, message);
 };
 
 const checkZip = function () {
   let valid = false;
-
+  const message = "Zip code cannot be blank.";
   const zip = zipCodeEl.value.trim();
-
-  if (!isRequired(zip)) {
-    showError(zipCodeEl, "Zip cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(zip, zipCodeEl, message);
 };
 
 const checkPassword = function () {
   let valid = false;
-
+  const message = "Password cannot be blank.";
   const password = passwordEl.value.trim();
-
-  if (!isRequired(password)) {
-    showError(passwordEl, "Zip cannot be blank.");
-  } else {
-    valid = true;
-  }
+  validation(password, passwordEl, message);
 };
 
 const confirmPassword = function () {
